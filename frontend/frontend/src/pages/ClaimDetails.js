@@ -25,6 +25,27 @@ export default function ClaimDetails() {
   const handleExport = () => {
     window.print(); // or build PDF later
   };
+const handleDelete = async () => {
+  if (!window.confirm("Are you sure you want to delete this claim?")) return;
+
+  try {
+    const res = await fetch(`http://localhost:5000/api/claims/${id}`, {
+      method: "DELETE",
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      alert(err.error || "Failed to delete claim");
+      return;
+    }
+
+    alert("Claim deleted successfully!");
+    navigate("/Manager_Dashboard"); // 👈 redirect after delete
+  } catch (err) {
+    console.error(err);
+    alert("Error deleting claim");
+  }
+};
 
   return (
     <div className="cd-wrapper">
@@ -40,11 +61,11 @@ export default function ClaimDetails() {
             </button>
             <button
   className="cd-edit"
-  onClick={() => navigate('/claims/${id}/edit')}
+  onClick={() => navigate(`/claims/${id}/edit`)}
 >
   Edit
 </button>
-            <button className="cd-delete">Delete</button>
+            <button className="cd-delete" onClick={handleDelete}>Delete</button>
           </div>
         </div>
 
@@ -104,8 +125,8 @@ export default function ClaimDetails() {
             </div>
 
             <div className="cd-bottom-actions">
-              <button className="cd-edit large">Edit Claim</button>
-              <button className="cd-delete large">Delete Claim</button>
+              <button className="cd-edit large" onClick={() => navigate(`/claims/${id}/edit`)}>Edit Claim</button>
+              <button className="cd-delete large" onClick={handleDelete}>Delete Claim</button>
             </div>
           </div>
         </div>

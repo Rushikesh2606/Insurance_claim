@@ -1,6 +1,7 @@
 # claims_routes.py
 from flask import Blueprint, jsonify, request
 from bson import ObjectId
+from datetime import datetime
 from services.claims_service import (
     get_claims, get_status_summary, seed_claims, create_claim
 )
@@ -63,3 +64,13 @@ def api_update_claim(id):
     if result.modified_count == 0:
         return jsonify({"error": "No claim updated"}), 404
     return jsonify({"message": "Claim updated successfully"})
+@claims_bp.route("/claims/<id>", methods=["DELETE"])
+def api_delete_claim(id):
+    from services.claims_service import claims_col
+
+    result = claims_col.delete_one({"_id": ObjectId(id)})
+
+    if result.deleted_count == 0:
+        return jsonify({"error": "Claim not found"}), 404
+
+    return jsonify({"message": "Claim deleted successfully"}), 200
