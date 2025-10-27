@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# 🧾 Claim Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application built for managing insurance claims efficiently.  
+It includes claim creation, viewing, editing, deleting, and analytics, with a modern responsive UI.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Tech Stack
 
-### `npm start`
+| Layer | Technology |
+|-------|-------------|
+| **Frontend** | React.js (Vite / CRA), HTML5, CSS3 |
+| **Backend** | Flask (Python) |
+| **Database** | MongoDB |
+| **Styling** | Custom CSS (Inter Font, responsive layout) |
+| **Other Tools** | Node.js, npm, Git |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🏗️ Project Structure
 
-### `npm test`
+```
+project-root/
+│
+├── backend/
+│   ├── app.py
+│   ├── routes/
+│   │   └── claims_routes.py
+│   ├── services/
+│   │   └── claims_service.py
+│   ├── requirements.txt
+│
+├── frontend/
+│   ├── src/
+│   │   ├── pages/
+│   │   │   ├── ClaimDetails.jsx
+│   │   │   ├── ManagerDashboard.jsx
+│   │   └── styles/
+│   │       ├── ClaimDetails.css
+│   │       └── Dashboard.css
+│   ├── package.json
+│   ├── vite.config.js (or CRA files)
+│
+└── README.md
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ⚙️ Setup Instructions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/<your-username>/<your-repo-name>.git
+cd <your-repo-name>
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2️⃣ Backend Setup (Flask)
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate    # (or venv\Scripts\activate on Windows)
+pip install -r requirements.txt
+python app.py
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3️⃣ Frontend Setup (React)
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-### `npm run eject`
+Then visit **http://localhost:5173** (or similar) to view the app.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🌟 Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- 🧾 Create, view, edit, and delete claims  
+- 📊 Dashboard for claim summaries and quick stats  
+- 💬 Detailed claim info with export (print/PDF)  
+- 🌈 Modern responsive UI with Inter font  
+- 🔒 Secure backend API integration
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🧠 Future Enhancements
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- PDF export and download  
+- Role-based access (Admin / Manager)  
+- Charts & analytics dashboard  
+- Email notifications on claim updates
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🧑‍💻 Developer Info
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Author:** <Rushikesh-Suresh-Yadav>  
+**GitHub:** [@your-username](https://github.com/Rushikesh2606)  
+**License:** MIT
