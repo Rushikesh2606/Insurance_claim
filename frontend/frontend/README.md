@@ -87,7 +87,7 @@ Then visit **http://localhost:5173** (or similar) to view the app.
 ## 🧠 Future Enhancements
 
 - PDF export and download  
-- Role-based access (Admin / Manager)  
+- Role-based access (Admin / Manager) 
 - Charts & analytics dashboard  
 - Email notifications on claim updates
 
