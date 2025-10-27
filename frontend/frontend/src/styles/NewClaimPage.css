@@ -1,0 +1,52 @@
+.ncp-wrapper{
+  min-height:100vh;
+  /*background:#f5f6fa;*/
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+}
+.ncp-card{
+  background:#fff;
+  border-radius:8px;
+  padding:2rem 2.5rem;
+  width:100%;
+  max-width:700px;
+  box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+.ncp-title{margin:0 0 .25rem;font-size:1.5rem}
+.ncp-subtitle{margin:0 0 1.5rem;color:#666}
+.ncp-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem 1.5rem;
+}
+.ncp-full{grid-column:1/-1}
+.ncp-grid label{
+  display:flex;
+  flex-direction:column;
+  font-weight:500;
+  font-size:.9rem;
+}
+.ncp-grid input,.ncp-grid select,.ncp-grid textarea{
+  margin-top:.25rem;
+  padding:.5rem .75rem;
+  border:1px solid #ccc;
+  border-radius:4px;
+  font-size:1rem;
+}
+.ncp-actions{
+  margin-top:2rem;
+  display:flex;
+  justify-content:flex-end;
+  gap:.75rem;
+}
+.ncp-actions button{
+  border:none;
+  padding:.6rem 1.2rem;
+  border-radius:4px;
+  font-size:1rem;
+  cursor:pointer;
+}
+.ncp-cancel{background:#e0e0e0;color:#333}
+.ncp-create{background:#2c3e50;color:#fff}
