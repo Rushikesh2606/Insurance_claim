@@ -6,6 +6,7 @@ import Dashboard  from "./components/Dashboard";
 import Manager_DashBoard from "./pages/ManagerModules"
 import New_claim from "./pages/NewClaim"
 import ClaimDetails from "./pages/ClaimDetails";
+import EditClaim from './pages/EditClaim';
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +19,7 @@ function App() {
           <Route path="/manager_dashboard" element={<Manager_DashBoard />} />
            <Route path="/add_claim" element={<New_claim/>} />
           <Route path="/claims/:id" element={<ClaimDetails />} />
+          <Route path="/claims/:id/edit" element={<EditClaim />} />
       </Routes>
     </BrowserRouter>
   );

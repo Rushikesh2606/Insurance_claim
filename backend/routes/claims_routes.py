@@ -38,3 +38,28 @@ def api_get_claim(id):
         return jsonify({"error": "Not found"}), 404
     doc["_id"] = str(doc["_id"])
     return jsonify(doc)
+
+@claims_bp.route("/claims/<id>", methods=["PUT"])
+def api_update_claim(id):
+    from services.claims_service import claims_col
+    data = request.get_json() or {}
+
+    result = claims_col.update_one(
+        {"_id": ObjectId(id)},
+        {"$set": {
+            "claimNumber": data.get("claimNumber"),
+            "policyNumber": data.get("policyNumber"),
+            "type": data.get("type"),
+            "status": data.get("status"),
+            "priority": data.get("priority"),
+            "amount": float(data.get("amount", 0)),
+            "customer": data.get("customer"),
+            "customerEmail": data.get("customerEmail"),
+            "description": data.get("description"),
+            "updatedAt": datetime.utcnow().isoformat()
+        }}
+    )
+
+    if result.modified_count == 0:
+        return jsonify({"error": "No claim updated"}), 404
+    return jsonify({"message": "Claim updated successfully"})

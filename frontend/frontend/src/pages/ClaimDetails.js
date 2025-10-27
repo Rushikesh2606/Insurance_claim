@@ -38,7 +38,12 @@ export default function ClaimDetails() {
             <button className="cd-export" onClick={handleExport}>
               Export
             </button>
-            <button className="cd-edit">Edit</button>
+            <button
+  className="cd-edit"
+  onClick={() => navigate('/claims/${id}/edit')}
+>
+  Edit
+</button>
             <button className="cd-delete">Delete</button>
           </div>
         </div>
